@@ -14,7 +14,7 @@ module.exports = merge(common, {
         historyApiFallback: true,
         open: true,
         contentBase: path.join(__dirname, './dist'),
-        port: 3000,
+        port: 5000,
         hot: true
     },
     module: {

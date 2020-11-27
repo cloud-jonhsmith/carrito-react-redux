@@ -70,11 +70,40 @@ const initialState = {
             count: 1
         },
     ],
-    productsCar: []
+    productsCar: [],
+    total: 0
 }
 
 const reducerProducts = (state = initialState, action) => {
-    if (action.type === "AGREGAR_PRODUCTO") {
+    switch (action.type) {
+        case "AGREGAR_PRODUCTO":
+            return {
+                ...state,
+                productsCar: state.productsCar.concat(action.product),
+                products: state.products.filter(prod => prod.id !== action.product.id)
+            }
+        case "QUITAR_PRODUCTO":
+            return {
+                ...state,
+                products: state.products.concat(action.product),
+                productsCar: state.productsCar.filter(prod => prod.id !== action.product.id)
+            }
+        case "DISMINUIR_CANTIDAD":
+            return {
+                ...state,
+                products: state.products.concat(action.product),
+                productsCar: state.productsCar.filter(prod => prod.id !== action.product.id)
+            }
+        case "AUMENTAR_CANTIDAD":
+            return {
+                ...state,
+                products: state.products.concat(action.product),
+                productsCar: state.productsCar.filter(prod => prod.id !== action.product.id)
+            }
+        default:
+          return state
+      }
+    /* if (action.type === "AGREGAR_PRODUCTO") {
         return {
             ...state,
             productsCar: state.productsCar.concat(action.product),
@@ -85,11 +114,12 @@ const reducerProducts = (state = initialState, action) => {
     if ( action.type === "QUITAR_PRODUCTO" ) {
         return {
             ...state,
-            products: state.productsCar.concat(action.product),productsCar: state.products.filter(prod => prod.id !== action.product.id)
+            products: state.products.concat(action.product),
+            productsCar: state.productsCar.filter(prod => prod.id !== action.product.id)
         }
     }
 
-    return state
+    return state */
 }
 
 export default createStore(reducerProducts)

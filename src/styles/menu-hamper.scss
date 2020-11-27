@@ -1,0 +1,73 @@
+.menu-hamper {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    background: rgb(192, 186, 186);
+    .item-hamper-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+    }
+    :nth-child(1) {
+        width: 15%;
+    }
+    :nth-child(5) {
+        width: 10%;
+    }
+}
+
+.list-product-hamper {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    list-style: none;
+    margin: 0 0 10px 0;
+    .item-hamper-product {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 60px;
+    }
+    :nth-child(1), :nth-child(2) {
+        justify-content: flex-start;
+    }
+    :nth-child(1) {
+        width: 15%;
+    }
+    :nth-child(5) {
+        width: 10%;
+    }
+    // Para centrar verticalmente el número de cantidad
+    :nth-child(3) {
+        justify-content: space-around;
+    }
+}
+
+// RESPONSIVE
+
+// Móviles en horizontal o tablets en vertical
+
+@media (min-width: 480px) { 
+
+}
+
+// Tablets en horizontal
+
+@media (min-width: 768px) { 
+
+}
+
+// Tablets en horizonal y escritorios normales
+
+@media (min-width: 1024px) { 
+
+}
+
+// Escritorios muy anchos
+
+@media (min-width: 1200px) { 
+
+}
